@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JukeBaux - Social Music Platform</title>
+<style type="text/css">
+@import url("/views/css/index.css");
+
+</style>
+<link rel='shortcut icon' href='/views/img/favicon.ico' type='image/x-icon'/ >
+</head>
+
+<body>
+
+
+	<!-- The Modal -->
+	<div id="loginModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close">x</span>
+	      <h2>Log In</h2>
+	    </div>
+	    <div class="modal-body">
+	      <form id="my_form" action="/login" method="post">
+			<div class="group">      
+	              <input name="email" type="email" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Email</label>
+	        </div>
+			<div class="group">      
+	              <input name="password" type="password" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Password</label>
+	        </div>
+			<br>
+			
+				<div href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="btn">Login</div>
+			
+			<br>
+		</form>
+	    </div>
+	  </div>
+	
+	</div>
+	<div id="signupModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close2">x</span>
+	      <h2>Sign-Up</h2>
+	    </div>
+	    <div class="modal-body">
+	      <form id="my_form3" action="/signup" method="post">
+			<div class="group">      
+	              <input name="email" type="email" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Email</label>
+	        </div>
+			<div class="group">      
+	              <input name="password" type="password" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Password</label>
+	        </div>
+	<br>
+	<p>
+			By Signing up you consent to taking part in academic research involving this application. <br>You can find more information here.</p>
+			<div href="javascript:{}" onclick="document.getElementById('my_form3').submit();" class="btn">Sign Up</div>
+			<br>
+		</form>
+	    </div>
+	  </div>
+	
+	</div>
+	<div class="container">
+		<div class="header">
+		
+			
+			
+		    <nav>
+		    
+		    	<a id="modal-log" class="nava" >Login</a>
+		        <a id="modal-sign" class="nava">Sign-Up</a>
+		        
+		    </nav>
+		    <div class="image-block"><img class ="JKBX" src="/views/img/logo.png"></div>
+			 <p class="tag">Social Music Platform</p>
+		</div>
+		<div class="content">
+		    
+		   
+		    
+		   
+		        
+		   
+		</div>
+	</div>
+	
+	<script>
+		// Get the modal
+		var modal = document.getElementById('loginModal');
+		var modal2 = document.getElementById('signupModal');
+		
+		// Get the button that opens the modal
+		var btn = document.getElementById("modal-log");
+		var btn2 = document.getElementById("modal-sign");
+		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		var span2 = document.getElementsByClassName("close2")[0];
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+		btn2.onclick = function() {
+		    modal2.style.display = "block";
+		}
+		
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+		span2.onclick = function() {
+		    modal2.style.display = "none";
+		}
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+			if (event.target == modal2) {
+		        modal2.style.display = "none";
+		    }
+		}
+	</script>
+
+</body>
+</html>

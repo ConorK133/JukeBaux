@@ -1,0 +1,44 @@
+0.1 - Authentication
+0.2 - Creating a chatroom
+0.3 - 
+0.4 - Chat roomstuff 
+0.5 - Youtube API implementation
+0.6 - Queue work
+	0.61 - Video push fix(fail)
+	0.62 - Video push Fix (works)
+	0.63 - Push queuev ui potential fix
+0.7 - Voting on Queue
+	0.71 - remove first vid when voted - broke the rest
+	0.72 - fucked
+	0.73 - fixed maybe
+	0.74 - Fix for if no vid to play - broke remove if there is only one video in queue
+	0.75 - UI Update stuff / buttons / YT search area
+0.8 - Search implementation
+	0.81 - search and display
+	0.82 - add to queue from search
+0.9 - Room Sessions + UI Templates
+	0.91 - Store rooms in DB + display on lobby. UI Templates
+	0.92 - Room sessions mk1 - UI mk1
+	0.93 - sessions fixes
+	0.94 - more fixes
+	0.97 - fixes
+0.10 - UI Updates
+	0.101 - initial
+	0.102- minor fixes
+0.10 - UI Updates
+	0.101-103- UI Updates and Fixes
+	0.104 - Room Passwords + join by ID + Check if room exists
+	0.105 - Lobby UI Updates 
+	0.106 - UI FIX
+	0.107 - UI Updates/some fixes
+	0.108 - UI Stuff
+
+
+
+-----------------------------Shit to fix--------------------------------------------------------
+-remove if there is only one video in queue // might leave as is.
+------------------------------------------------------------------------------------------------
+- Have it not freak out when theres no video to play.
+------------------------------------------------------------------------------------------------
+-voting just once. //hide button after click
+------------------------------------------------------------------------------------------------

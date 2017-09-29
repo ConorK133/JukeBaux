@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='shortcut icon' href='/views/img/favicon.ico' type='image/x-icon'/ >
+<link rel="stylesheet" type="text/css" href="/views/css/index.css">
+<link rel="stylesheet" type="text/css" href="/views/css/chat2.css">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header2">
+		
+			<img id="logop" src="/views/img/logo.png" />
+			<a id="rid">
+			<nav>
+				<a class="nava" href="/profile"><%= user.local.email %></a>
+				<a class="nava" href="/logout">Log Out</a>
+			</nav>
+		</div>
+			<div class="queue">
+				<div class="queue-messages"></div>			
+			</div>
+		
+			<div id="bg">
+				<div id="cont">	
+					<a class="btl" href="/lobby">Back To Lobby</a>
+					<div id="player">
+						<div class="stretchy-wrapper">
+							<div id="iframe">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="chat">
+				<div id="id"style="display: none;visibility: hidden;"><%= user.local.email %>
+				</div>
+				<div id="buttons"> 
+					<a class="btn2" id="chat-btn">Chat</a><a class="btn2" id="search">Search</a>
+				</div>
+			
+			<div class="chatStuff">
+				<textarea placeholder="Type your message"></textarea>
+				<div class="chat-messages">
+				</div>
+			</div>
+			<div class="searchStuff" >
+				<textarea class="ta-search" placeholder="search YouTube"></textarea>
+				<div class="search-results" style="display: none;">
+				</div>
+			</div>
+		</div>
+		
+	</div> 
+			
+		
+	<script type="text/javascript" src="/socket.io/socket.io.js'"></script>
+	<script type="text/javascript" src="/config/chat.js"></script>
+	<script type="text/javascript" src="/config/youtube.js"></script>
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script>
+		var pathname = window.location.pathname,
+		part = "Room ID: " + pathname.substr(pathname.lastIndexOf('/') + 1);
+		var page = document.getElementById('rid');
+		page.textContent = part;
+		$("#chat-btn").click(function() {
+			$(".chatStuff").show();
+			$(".searchStuff").hide();
+			$("textarea").show();
+			$(".chat-messages").show();
+		});
+		$("#search").click(function() {
+			$(".chatStuff").hide();
+			$(".searchStuff").show();
+			$(".ta-search").show();
+			$(".search-results").show();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JukeBaux - Lobby</title>
+<link rel='shortcut icon' href='/views/img/favicon.ico' type='image/x-icon'/ >
+<style type="text/css">
+
+@import url("/views/css/index.css");
+@import url("/views/css/lobby.css");
+
+</style>
+
+</head>
+
+<body>
+	<!-- The Modal -->
+	<div id="joinModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close">x</span>
+	      <h2>Join by ID</h2>
+	    </div>
+	    <div class="modal-body">
+	      <form id="my_form" action="/joinLogin" method="post">
+			<div class="group">      
+	              <input name="roomid" type="text" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Room ID</label>
+	        </div>
+			<div class="group">      
+	              <input name="password" type="password">
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Password(Optional)</label>
+	        </div>
+	
+			<br>
+			
+				<div href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="btn">Join</div>
+			
+			<br>
+		</form>
+	    </div>
+	  </div>
+	
+	</div>
+	<div id="joinbtnModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close3">x</span>
+	      <h2>Enter Your Password</h2>
+	    </div>
+	    <div class="modal-body">
+	      <form id="my_form2" action="/roomLogin" method="post">
+			
+			   
+	              <input id="roomNameInModal" name="roomId" type="hidden">
+	              
+	        <div class="group">      
+	              <input name="password" type="password">
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Password(Optional)</label>
+	        </div>
+	        
+	
+			<br>
+			
+				<div href="javascript:{}" onclick="document.getElementById('my_form2').submit();" class="btn">Join</div>
+			
+			<br>
+		</form>
+	    </div>
+	  </div>
+	
+	</div>
+	<div id="createModal" class="modal">
+	
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close2">x</span>
+	      <h2>Create A Room</h2>
+	    </div>
+	    <div class="modal-body">
+	      <form id="my_form3" action="/createroom" method="post">
+			<div class="group">      
+	              <input name="roomName" type="text" required>
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Room Name</label>
+	        </div>
+			<div class="group">      
+	              <input name="password" type="password">
+	              <span class="highlight"></span>
+	              <span class="bar"></span>
+	              <label>Password(Optional)</label>
+	        </div>
+	
+			<br>
+			
+				<div href="javascript:{}" onclick="document.getElementById('my_form3').submit();" class="btn">Create Room</div>
+			
+			<br>
+		</form>
+	    </div>
+	  </div>
+	
+	</div>
+    <div class="container">
+        <div class="header2">
+        
+           <img id="logop" src="/views/img/logo.png" />
+            
+            <nav>
+            
+                <a class="nava" href="/profile"><%= user.local.email %></a>
+                <a class="nava" href="/logout">Log Out</a>
+                
+            </nav>
+            
+    
+        </div>
+        <div class="lobby-container" >
+			
+             
+		
+             <div class ="lobby-cont">
+			 <nav class="lobby-btn">
+              	<a id="modal-join" > Join by ID </a>
+				</nav> <nav class="lobby-btn">
+              	<a id="modal-create" > Create a Room</a>
+              </nav>
+                <div class="lobby">
+                            <div class="lobby-messages"></div>			
+                </div>
+            </div> 
+        </div>
+		
+    
+    
+        <script type="text/javascript" src="/socket.io/socket.io.js'"></script>
+        <script type="text/javascript" src="/config/lobbyPrint.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script>
+        // scripts to show and hide modal forms
+			// Get the modal
+			var modal = document.getElementById('joinModal');
+			var modal2 = document.getElementById('createModal');
+			var modal3 = document.getElementById('joinbtnModal');
+			
+			// Get the button that opens the modal
+			var btn = document.getElementById("modal-join");
+			var btn2 = document.getElementById("modal-create");
+			
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			var span2 = document.getElementsByClassName("close2")[0];
+			var span3 = document.getElementsByClassName("close3")[0];
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() {
+				modal.style.display = "block";
+			}
+			btn2.onclick = function() {
+				modal2.style.display = "block";
+			}
+			
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+			span2.onclick = function() {
+				modal2.style.display = "none";
+			}
+			span3.onclick = function() {
+				modal3.style.display = "none";
+			}
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+				if (event.target == modal2) {
+					modal2.style.display = "none";
+				}
+				if (event.target == modal3) {
+					modal3.style.display = "none";
+				}
+			}
+		</script>
+    </div>
+</body>
+</html>
